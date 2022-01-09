@@ -127,8 +127,8 @@ const Board = () => {
         fontSize: 24,
       }}>
         <h2
-          style={{ fontSize: 24, color: "#dddddd" }}
-        >Commands & Report
+          style={{ fontSize: 28, color: "#dddddd" }}
+        >Toy Robot Simulators
         </h2>
 
         <Selector setGetPosition={setGetPosition} getposition={getposition} />
@@ -136,24 +136,45 @@ const Board = () => {
           flex: 1,
         }}>
           <button style={{
-            marginTop: 30, fontSize: 24, color: "#aaa"
+            marginTop: 30,
+            fontSize: 18,
+            color: "#666",
+            width: 60
           }} onClick={() => { setFacing('north') }}>Up</button>
         </div>
-        <div style={{ flex: 1, margin: '10%' }}>
-          <button style={{ fontSize: 24, color: "#aaa" }} onClick={() => { setFacing('west') }}>Left</button>
-          <button style={{ marginLeft: 10, fontSize: 24, color: "#aaa" }} onClick={() => { setFacing('east') }}>Right</button>
+        <div style={{ flex: 1, margin: '5%' }}>
+          <button style={{
+            fontSize: 18,
+            color: "#666",
+            width: 60
+          }} onClick={() => { setFacing('west') }}>Left</button>
+          <button style={{ marginLeft: 10, fontSize: 18, color: "#666", width: 60 }} onClick={() => { setFacing('east') }}>Right</button>
         </div>
         <div style={{ flex: 1 }}>
           <button style={{
-            fontSize: 24, color: "#aaa"
+            fontSize: 18, color: "#666", width: 60
           }} onClick={() => { setFacing('south') }}>Down</button>
         </div>
         <div style={{ flex: 1 }}>
           <button style={{
-            marginTop: 40, fontSize: 24, color: "#aaa"
+            marginTop: 60,
+            fontSize: 24,
+            color: "#fff",
+            width: 80,
+            borderRadius: 5,
+            backgroundColor: 'grey'
           }} onClick={handleMove}>Move</button>
         </div>
-        <button style={{ marginTop: 60, marginRight: 10, fontSize: 24, color: "#aaa" }} onClick={hnadleReport}>Report</button>
+        <button style={{
+          marginTop: 60,
+          fontSize: 24,
+          width: 100,
+          color: "#fff",
+          textAlign: 'center',
+          justifyContent: 'center',
+          borderRadius: 5,
+          backgroundColor: 'grey'
+        }} onClick={hnadleReport}>Report</button>
       </div>
 
     )
