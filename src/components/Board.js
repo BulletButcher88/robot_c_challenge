@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { robot } from '../items/index'
 import Selector from './Selector'
-
 import './Background.css'
 
 
@@ -86,7 +85,10 @@ const Board = () => {
     }
   }
 
-
+  const hnadleReport = () => {
+    const xandy = getposition.split('|')
+    setRepart(xandy + ', ' + facing.toUpperCase())
+  }
 
   const cells = board.map((obj, key) =>
     obj.map((obj, key2) =>
@@ -102,47 +104,47 @@ const Board = () => {
 
   const inputOutput = () => {
     return (
-      <div style={{ flexDirection: 'row', flex: 1 }}>
-        <label
-          style={{ margin: 20, fontSize: 24, color: "#dddddd" }}
-        >Enter in command:
-        </label>
+      <div style={{
+        flex: 1,
+        justifyContent: 'center',
+        textAlign: 'center',
+        minWidth: 270,
+        maxWidth: 300,
+        margin: 20,
+        height: 500,
+        width: 300,
+        color: "#dddddd",
+        fontSize: 24,
+      }}>
+        <h2
+          style={{ fontSize: 24, color: "#dddddd" }}
+        >Commands & Report
+        </h2>
+
+        <Selector setGetPosition={setGetPosition} getposition={getposition} />
         <div style={{
           flex: 1,
-          justifyContent: 'center',
-          alignItems: 'center',
-          width: "100%",
-          height: "80%",
-          marginLeft: 20,
-          backgroundColor: '#333',
-          maxWidth: 300,
-          minWidth: 200
         }}>
-          <form>
-          </form>
-          <div style={{ marginLeft: 20, fontSize: 24, color: "#aaa" }}>
-            <Selector setGetPosition={setGetPosition} />
-            <div style={{
-              flex: 1,
-              justifyContent: 'center',
-              alignItems: 'center',
-              width: '100%'
-            }}>
-              <button style={{ margin: 10, fontSize: 24, color: "#aaa" }} onClick={() => { setFacing('north') }}>NORTH</button>
-            </div>
-            <div style={{ flex: 1 }}>
-              <button style={{ margin: 10, fontSize: 24, color: "#aaa" }} onClick={() => { setFacing('west') }}>WEST</button>
-              <button style={{ margin: 10, fontSize: 24, color: "#aaa" }} onClick={() => { setFacing('east') }}>EAST</button>
-            </div>
-            <div style={{ flex: 1 }}>
-              <button style={{ margin: 10, fontSize: 24, color: "#aaa" }} onClick={() => { setFacing('south') }}>SOUTH</button>
-            </div>
-            <div style={{ flex: 1 }}>
-              <button style={{ margin: 10, fontSize: 24, color: "#aaa" }} onClick={handleMove}>MOVE</button>
-              /              {report}
-            </div>
-          </div>
+          <button style={{
+            marginTop: 30, fontSize: 24, color: "#aaa"
+          }} onClick={() => { setFacing('north') }}>NORTH</button>
         </div>
+        <div style={{ flex: 1, margin: '10%' }}>
+          <button style={{ fontSize: 24, color: "#aaa" }} onClick={() => { setFacing('west') }}>WEST</button>
+          <button style={{ marginLeft: 10, fontSize: 24, color: "#aaa" }} onClick={() => { setFacing('east') }}>EAST</button>
+        </div>
+        <div style={{ flex: 1 }}>
+          <button style={{
+            fontSize: 24, color: "#aaa"
+          }} onClick={() => { setFacing('south') }}>SOUTH</button>
+        </div>
+        <div style={{ flex: 1 }}>
+          <button style={{
+            marginTop: 40, fontSize: 24, color: "#aaa"
+          }} onClick={handleMove}>MOVE</button>
+        </div>
+        <button style={{ marginTop: 60, marginRight: 10, fontSize: 24, color: "#aaa" }} onClick={hnadleReport}>Report</button>
+        {report}
       </div>
 
     )
