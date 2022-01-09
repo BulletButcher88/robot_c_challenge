@@ -1,11 +1,11 @@
 # Toy Robot Simulator 
 
-### Heroku Deployment
+### CI Deployment @ Heroku
 http://robotchallenge.herokuapp.com/
 
-# Using this React App
+# Run this React App on localhost
 
-CLone this project directory, then enter the project_name folder and run:
+Clone this repository, enter the project_name folder and run:
 ### `npm start`
 
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.

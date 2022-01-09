@@ -13,12 +13,12 @@ const Selector = ({ setGetPosition, getposition }) => {
     setPositionY(e.target.value)
   }
   useEffect(() => {
-    setGetPosition(positionX + "|" + positionY)
+    setGetPosition(positionX + "," + positionY)
   }, [positionX, positionY])
 
   useEffect(() => {
     if (getposition) {
-      const pos = getposition.split("|");
+      const pos = getposition.split(",");
       const x = Number(pos[0])
       setPositionX(x)
       const y = Number(pos[1])

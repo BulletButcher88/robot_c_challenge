@@ -12,7 +12,7 @@ const Board = () => {
 
   const color = ["#aaa", "#ddd"]
 
-  // create 5 x 5 board
+  // creating 5 x 5 map
   useEffect(() => {
     let map = [];
     const createMap = (rowCount, columnCount) => {
@@ -25,7 +25,7 @@ const Board = () => {
 
     const addCell = (x, y) => {
       map[x] = map[x] || [];
-      map[x][y] = x + '|' + y;
+      map[x][y] = x + ',' + y;
     }
 
     createMap(5, 5);
@@ -48,36 +48,36 @@ const Board = () => {
   }
 
   const handleMove = () => {
-    const pos = getposition.split("|");
+    const pos = getposition.split(",");
     const x = Number(pos[0])
     const y = Number(pos[1])
     switch (facing) {
       case 'north':
         if (x > 3) {
-          setGetPosition(`${x}|${y}`)
+          setGetPosition(`${x},${y}`)
         } else {
-          setGetPosition(`${x + 1}|${y}`)
+          setGetPosition(`${x + 1},${y}`)
         }
         return
       case 'east':
         if (y > 3) {
-          setGetPosition(`${x}|${y}`)
+          setGetPosition(`${x},${y}`)
         } else {
-          setGetPosition(`${x}|${y + 1}`)
+          setGetPosition(`${x},${y + 1}`)
         }
         return
       case 'south':
         if (x < 1) {
-          setGetPosition(`${x}|${y}`)
+          setGetPosition(`${x},${y}`)
         } else {
-          setGetPosition(`${x - 1}|${y}`)
+          setGetPosition(`${x - 1},${y}`)
         }
         return
       case 'west':
         if (y < 1) {
-          setGetPosition(`${x}|${y}`)
+          setGetPosition(`${x},${y}`)
         } else {
-          setGetPosition(`${x}|${y - 1}`)
+          setGetPosition(`${x},${y - 1}`)
         }
         return
       default:
@@ -85,17 +85,27 @@ const Board = () => {
     }
   }
 
+
+  useEffect(() => {
+
+    setRepart('')
+  }, [getposition])
+
+
   const hnadleReport = () => {
-    const xandy = getposition.split('|')
-    setRepart(xandy + ', ' + facing.toUpperCase())
+    setRepart(getposition)
   }
+
 
   const cells = board.map((obj, key) =>
     obj.map((obj, key2) =>
       <div style={{ backgroundColor: `${color[(key + key2) % 2]}`, height: '100%', justifyContent: 'center', alignItems: 'center' }}
         className="item" key={obj}>
+        {obj === report ?
+          <div style={{ width: 90, height: 20, position: 'absolute', backgroundColor: "white", margin: -30, borderRadius: 20, textAlign: 'center', padding: 5 }}>{
+            report + ', ' + facing.toUpperCase()}</div>
+          : null}
         <h6 style={{ margin: '0', position: 'absolute', color: 'white' }}>
-          {obj}
         </h6>
         {obj === getposition ? renderFacing() : null}
       </div>
@@ -144,7 +154,6 @@ const Board = () => {
           }} onClick={handleMove}>Move</button>
         </div>
         <button style={{ marginTop: 60, marginRight: 10, fontSize: 24, color: "#aaa" }} onClick={hnadleReport}>Report</button>
-        {report}
       </div>
 
     )
