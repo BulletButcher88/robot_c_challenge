@@ -127,21 +127,21 @@ const Board = () => {
         }}>
           <button style={{
             marginTop: 30, fontSize: 24, color: "#aaa"
-          }} onClick={() => { setFacing('north') }}>NORTH</button>
+          }} onClick={() => { setFacing('north') }}>Up</button>
         </div>
         <div style={{ flex: 1, margin: '10%' }}>
-          <button style={{ fontSize: 24, color: "#aaa" }} onClick={() => { setFacing('west') }}>WEST</button>
-          <button style={{ marginLeft: 10, fontSize: 24, color: "#aaa" }} onClick={() => { setFacing('east') }}>EAST</button>
+          <button style={{ fontSize: 24, color: "#aaa" }} onClick={() => { setFacing('west') }}>Left</button>
+          <button style={{ marginLeft: 10, fontSize: 24, color: "#aaa" }} onClick={() => { setFacing('east') }}>Right</button>
         </div>
         <div style={{ flex: 1 }}>
           <button style={{
             fontSize: 24, color: "#aaa"
-          }} onClick={() => { setFacing('south') }}>SOUTH</button>
+          }} onClick={() => { setFacing('south') }}>Down</button>
         </div>
         <div style={{ flex: 1 }}>
           <button style={{
             marginTop: 40, fontSize: 24, color: "#aaa"
-          }} onClick={handleMove}>MOVE</button>
+          }} onClick={handleMove}>Move</button>
         </div>
         <button style={{ marginTop: 60, marginRight: 10, fontSize: 24, color: "#aaa" }} onClick={hnadleReport}>Report</button>
         {report}
