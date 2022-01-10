@@ -125,6 +125,7 @@ const Board = () => {
         width: 300,
         color: "#dddddd",
         fontSize: 24,
+        backgroundColor: 'rgba(10, 10, 10, 0.7)',
       }}>
         <h2
           style={{ fontSize: 28, color: "#dddddd" }}
