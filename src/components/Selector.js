@@ -33,7 +33,7 @@ const Selector = ({ setGetPosition, getposition }) => {
         fontSize: 30,
         color: "#aaa",
       }}>
-        Place : x
+        Place : y
         <select value={positionX} onChange={handleChangeX} style={{
           margin: 5, width: 35, height: 30, fontSize: 14,
         }}>
@@ -42,7 +42,7 @@ const Selector = ({ setGetPosition, getposition }) => {
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
-        </select> y
+        </select> x
         <select value={positionY} onChange={handleChangeY} style={{
           margin: 5, width: 35, height: 30, fontSize: 14,
         }}>
