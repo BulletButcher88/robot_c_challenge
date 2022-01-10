@@ -185,7 +185,7 @@ const Board = () => {
     <>
       {inputOutput()}
       <div
-        style={{ margin: 20 }}
+        style={{ marginTop: "2%" }}
         className='board'>
         {cells}
       </div>
