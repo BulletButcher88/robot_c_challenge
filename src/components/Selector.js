@@ -27,15 +27,18 @@ const Selector = ({ setGetPosition, getposition }) => {
   }, [getposition])
 
   return (
-    <form style={{ flex: 1 }} >
+    <form style={{ flex: 1, justifyContent: 'center' }} >
       <label style={{
         margin: 20,
-        fontSize: 30,
-        color: "#aaa",
+        color: "#ddd",
+        fontSize: 24,
+        width: 80,
+        borderRadius: 5,
+        fontWeight: '600'
       }}>
         Place : y
         <select value={positionX} onChange={handleChangeX} style={{
-          margin: 5, width: 35, height: 30, fontSize: 14,
+          margin: 10, width: 35, height: 30, fontSize: 14,
         }}>
           <option value="0">0</option>
           <option value="1">1</option>
@@ -44,7 +47,7 @@ const Selector = ({ setGetPosition, getposition }) => {
           <option value="4">4</option>
         </select> x
         <select value={positionY} onChange={handleChangeY} style={{
-          margin: 5, width: 35, height: 30, fontSize: 14,
+          margin: 10, width: 35, height: 30, fontSize: 14,
         }}>
           <option value="0">0</option>
           <option value="1">1</option>
