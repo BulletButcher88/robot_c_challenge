@@ -89,7 +89,7 @@ const Board = () => {
   useEffect(() => {
 
     setRepart('')
-  }, [getposition])
+  }, [getposition, facing])
 
 
   const hnadleReport = () => {
